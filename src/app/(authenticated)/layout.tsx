@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 
 export default function LayoutAuthenticated({ children }: { children: ReactNode }) {
   return (
-    <div className="flex size-full flex-col items-center justify-center py-28">
+    <div className="flex size-full flex-col items-center justify-center py-16 sm:py-20 md:py-24 lg:py-28">
       <header className="flex w-full">
         <Container className="flex-col items-start justify-start gap-10 text-left">
           <div className="flex w-full items-center justify-between">

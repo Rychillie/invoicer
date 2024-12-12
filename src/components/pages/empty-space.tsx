@@ -31,22 +31,22 @@ export default function EmptySpace({ type = 'grid', intro, button }: Props) {
         </button>
       </div>
       {type === 'grid' ? (
-        <div className="absolute inset-x-0 inset-y-10 -z-10 grid size-full grid-cols-3 justify-between gap-6">
+        <div className="absolute inset-x-0 inset-y-10 -z-10 grid size-full grid-cols-2 justify-between gap-2 sm:gap-3 md:grid-cols-3 md:gap-6">
           {[...Array(24)].map((_, index) => (
             <div
               key={index}
-              className="flex aspect-[3/4] w-full items-center justify-center gap-4 bg-gray-50"
+              className="flex aspect-[3/4] w-full items-center justify-center gap-4 rounded-md bg-gray-50 md:rounded"
             />
           ))}
         </div>
       ) : (
-        <div className="absolute inset-x-0 inset-y-10 -z-10 grid size-full grid-cols-1 justify-between gap-6">
+        <div className="absolute inset-x-0 inset-y-10 -z-10 flex size-full flex-col gap-4">
           {[...Array(12)].map((_, index) => (
-            <div key={index} className="flex items-center gap-4">
-              <div className="size-10 rounded-full bg-gray-50" />
-              <div className="h-7 w-full max-w-[150px] rounded bg-gray-50" />
-              <div className="h-7 w-full max-w-[260px] rounded bg-gray-50" />
-              <div className="h-7 w-full max-w-[142px] rounded bg-gray-50" />
+            <div key={index} className="flex items-center gap-2 md:gap-4">
+              <div className="aspect-square size-10 rounded-full bg-gray-50" />
+              <div className="h-7 w-full rounded-md bg-gray-50 sm:max-w-[150px] md:rounded" />
+              <div className="hidden h-7 w-full max-w-[260px] rounded bg-gray-50 md:flex" />
+              <div className="hidden h-7 w-full max-w-[142px] rounded bg-gray-50 md:flex" />
             </div>
           ))}
         </div>
