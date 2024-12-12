@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={c('size-full', inter.variable)}>
-      <body className="size-full overflow-hidden antialiased">{children}</body>
+      <body className="size-full antialiased">{children}</body>
     </html>
   );
 }

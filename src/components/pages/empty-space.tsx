@@ -27,7 +27,7 @@ export default function EmptySpace({ type = 'grid', intro, button }: Props) {
           onClick={button.onClick}
           className="flex items-center justify-center gap-2 rounded-full bg-black px-8 py-1.5 font-medium text-white"
         >
-          <Icon.Plus /> {button.label}
+          <Icon name="plus" /> {button.label}
         </button>
       </div>
       {type === 'grid' ? (
@@ -44,9 +44,8 @@ export default function EmptySpace({ type = 'grid', intro, button }: Props) {
           {[...Array(12)].map((_, index) => (
             <div key={index} className="flex items-center gap-2 md:gap-4">
               <div className="aspect-square size-10 rounded-full bg-gray-50" />
-              <div className="h-7 w-full rounded-md bg-gray-50 sm:max-w-[150px] md:rounded" />
-              <div className="hidden h-7 w-full max-w-[260px] rounded bg-gray-50 md:flex" />
-              <div className="hidden h-7 w-full max-w-[142px] rounded bg-gray-50 md:flex" />
+              <div className="h-7 w-full rounded-md bg-gray-50 md:rounded" />
+              <div className="hidden h-7 w-full rounded bg-gray-50 md:flex" />
             </div>
           ))}
         </div>
