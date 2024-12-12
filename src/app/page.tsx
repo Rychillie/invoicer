@@ -1,4 +1,4 @@
-import { signin } from '@/actions';
+import { auth } from '@/actions';
 import { Container } from '@/components/ui';
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
           The easy way to create and manage invoices.
         </p>
         <button
-          onClick={signin}
+          onClick={auth.signin}
           className="rounded-xl border border-transparent bg-black px-6 py-1.5 text-white transition-all hover:border-gray-900/80 hover:bg-gray-700 active:border-gray-900/60 active:bg-gray-600/80"
         >
           Get Started

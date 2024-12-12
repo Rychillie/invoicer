@@ -1,2 +1,1 @@
-export { default as signin } from './sign-in';
-export { default as signout } from './sign-out';
+export * as auth from './auth';

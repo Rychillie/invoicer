@@ -1,18 +1,31 @@
+'use client';
+
 import { Container, Icon } from '@/components/ui';
 import type { Customers } from '@/types/customer';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Item from './item';
 
 export default function List({ data }: { data: Customers }) {
   return (
     <div className="flex h-fit w-full flex-col">
-      <div className="group/list no-scrollbar flex h-fit w-full flex-col gap-4 py-10">
+      <motion.div
+        className="group/list no-scrollbar flex h-fit w-full flex-col gap-4 py-10"
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 100 }}
+      >
         {data.map((customer) => (
           <Item key={customer.id} customer={customer} />
         ))}
-      </div>
+      </motion.div>
 
-      <div className="fixed inset-x-0 bottom-0 bg-gradient-to-b from-white/0 via-white via-45% to-white">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 100 }}
+        className="fixed inset-x-0 bottom-0 bg-gradient-to-b from-white/0 via-white via-45% to-white"
+      >
         <Container className="flex items-center justify-end pb-16 pt-10 sm:pb-20 md:pb-24 lg:pb-28">
           <Link
             href="/customers/new"
@@ -21,7 +34,7 @@ export default function List({ data }: { data: Customers }) {
             <Icon name="plus" /> New Customer
           </Link>
         </Container>
-      </div>
+      </motion.div>
     </div>
   );
 }
